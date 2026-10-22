@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StayHealthy</title>
+    <link rel="stylesheet" href="./Navbar.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav__inner">
+            <!-- Logo: "Stay" dark, "Healthy" purple (no icon, per design) -->
+            <a href="/" class="nav__logo">Stay<span>Healthy</span></a>
+
+            <!-- Hamburger toggle (visible on mobile only) -->
+            <button class="nav__toggle" id="navToggle"
+                    aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <!-- Links -->
+            <ul class="nav__links" id="navLinks">
+                <li><a href="../Landing_Page/LandingPage.html">Home</a></li>
+                <li><a href="#">Appointments</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="../Login/Login.html">Log in</a></li>
+                <li><a href="../Sign_Up/Sign_Up.html" class="active" aria-current="page">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        const toggle = document.getElementById("navToggle");
+        const links = document.getElementById("navLinks");
+        const icon = toggle.querySelector("i");
+
+        toggle.addEventListener("click", () => {
+            const open = links.classList.toggle("open");
+            toggle.setAttribute("aria-expanded", open);
+            icon.classList.toggle("fa-bars", !open);
+            icon.classList.toggle("fa-times", open);
+        });
+    </script>
+</body>
+</html>
