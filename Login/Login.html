@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | StayHealthy</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Adjust this path to wherever your Navbar.css lives -->
+    <link rel="stylesheet" href="../Navbar/Navbar.css">
+    <link rel="stylesheet" href="./Login.css">
+</head>
+<body>
+    <!-- Navbar (same markup as the other pages, Log in marked active) -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="../Landing_Page/LandingPage.html" class="nav__logo">Stay<span>Healthy</span></a>
+
+            <button class="nav__toggle" id="navToggle"
+                    aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <ul class="nav__links" id="navLinks">
+                <li><a href="../Landing_Page/LandingPage.html">Home</a></li>
+                <li><a href="#">Appointments</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="./Login.html" class="active" aria-current="page">Log in</a></li>
+                <li><a href="../Sign_Up/Sign_Up.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="login">
+        <header class="login__header">
+            <h1>Login</h1>
+            <p class="login__sub">
+                Are you a new member? <a href="../Sign_Up/Sign_Up.html">Sign Up Here</a>
+            </p>
+        </header>
+
+        <form class="login__card">
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email"
+                       autocomplete="email" required>
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password"
+                       autocomplete="current-password" required>
+            </div>
+
+            <button type="submit" class="btn">Login</button>
+
+            <a href="#" class="login__forgot">Forgot Password?</a>
+        </form>
+    </main>
+
+    <script>
+        // Mobile menu toggle (same as the other pages)
+        const toggle = document.getElementById("navToggle");
+        const links = document.getElementById("navLinks");
+        const icon = toggle.querySelector("i");
+
+        toggle.addEventListener("click", () => {
+            const open = links.classList.toggle("open");
+            toggle.setAttribute("aria-expanded", open);
+            icon.classList.toggle("fa-bars", !open);
+            icon.classList.toggle("fa-times", open);
+        });
+    </script>
+</body>
+</html>
