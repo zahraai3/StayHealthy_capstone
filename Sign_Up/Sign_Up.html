@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | StayHealthy</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Adjust this path to wherever your Navbar.css lives -->
+    <link rel="stylesheet" href="../Navbar/Navbar.css">
+    <link rel="stylesheet" href="./Sign_Up.css">
+</head>
+<body>
+    <!-- Navbar (same markup as Navbar.html, Sign Up marked active) -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="../Landing_Page/LandingPage.html" class="nav__logo">Stay<span>Healthy</span></a>
+
+            <button class="nav__toggle" id="navToggle"
+                    aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
+            <ul class="nav__links" id="navLinks">
+                <li><a href="../Landing_Page/LandingPage.html">Home</a></li>
+                <li><a href="#">Appointments</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="../Login/Login.html">Log in</a></li>
+                <li><a href="./Sign_Up.html" class="active" aria-current="page">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="signup">
+        <header class="signup__header">
+            <h1>Sign Up</h1>
+            <p class="signup__sub">
+                Already a member? <a href="../Login/Login.html">Login</a>
+            </p>
+        </header>
+
+        <form class="signup__card">
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name"
+                       autocomplete="name" required>
+            </div>
+
+            <div class="field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"
+                       autocomplete="tel" required>
+            </div>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email"
+                       autocomplete="email" required>
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password"
+                       autocomplete="new-password" minlength="8" required>
+            </div>
+
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+    </main>
+
+    <script>
+        // Mobile menu toggle (same as Navbar.html)
+        const toggle = document.getElementById("navToggle");
+        const links = document.getElementById("navLinks");
+        const icon = toggle.querySelector("i");
+
+        toggle.addEventListener("click", () => {
+            const open = links.classList.toggle("open");
+            toggle.setAttribute("aria-expanded", open);
+            icon.classList.toggle("fa-bars", !open);
+            icon.classList.toggle("fa-times", open);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+:root {
+    --bg: #F7F7FF;
+    --surface: #EAE4F2;
+    --border: #D3CCE3;
+    --accent: #A6B1E1;
+    --primary: #5E60CE;
+    --primary-hover: #4D4FB8;
+    --primary-press: #3E40A3;
+    --text: #24243A;
+    --text-2: #66667A;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font: 400 14px/20px "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Page layout: centered column */
+.signup {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.signup__header h1 {
+    font: 600 28px/36px "Inter", sans-serif;
+}
+
+.signup__sub {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--text-2);
+}
+
+.signup__sub a {
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+}
+.signup__sub a:hover { text-decoration: underline; }
+
+/* Card */
+.signup__card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+/* Fields */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field label { font-weight: 500; }
+
+.field input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+}
+
+.field input::placeholder { color: var(--text-2); opacity: 1; }
+
+.field input:focus {
+    outline: 0;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(94, 96, 206, 0.25);
+}
+
+/* Only style as invalid after the user has typed something */
+.field input:not(:placeholder-shown):invalid { border-color: #B42318; }
+
+/* Button */
+.btn {
+    height: 44px;
+    margin-top: 4px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--primary);
+    color: #fff;
+    font: 600 15px/20px "Inter", sans-serif;
+    cursor: pointer;
+}
+.btn:hover  { background: var(--primary-hover); }
+.btn:active { background: var(--primary-press); }
+.btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* Small screens */
+@media (max-width: 480px) {
+    .signup { padding: 32px 16px 48px; }
+    .signup__card { padding: 24px; }
+}
